@@ -14,7 +14,17 @@
     Dim postcode As String
 
     Private Sub CheckIfNull()
-        If 
+        If TBccnum.Text Is Nothing Or TBfullname.Text Is Nothing Or TBhousenum.Text Is Nothing Or TBstreetname.Text Is Nothing Or TBtown.Text Is Nothing And TBpostcode.Text Is Nothing Then
+            MsgBox("Please complete all fields")
+            TBccnum.Text = ""
+            TBfullname.Text = ""
+            TBhousenum.Text = ""
+            TBpostcode.Text = ""
+            TBstreetname.Text = ""
+            TBtown.Text = ""
+
+
+        End If
     End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
