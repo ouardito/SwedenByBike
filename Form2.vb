@@ -47,6 +47,19 @@
         End If
     End Sub
 
+    Private Function Storedetails() As String
+        ccnum = TBccnum.Text
+        fullname = TBfullname.Text
+        housenum = TBhousenum.Text
+        streetname = TBstreetname.Text
+        town = TBtown.Text
+        postcode = TBpostcode.Text
+    End Function
+
+    Private Function WriteDetails() As String
+
+    End Function
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbltotal.Text += "Total Cost : " & total & "SEK"
     End Sub
