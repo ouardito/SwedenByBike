@@ -30,7 +30,6 @@
 
     Private Sub BtnQuote_Click(sender As Object, e As EventArgs) Handles btnQuote.Click
 
-
         destination = CBtourdestination.SelectedItem
         length = CBtourlength.SelectedItem
         Month = CBtourmonth.SelectedItem

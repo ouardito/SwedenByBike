@@ -22,8 +22,28 @@
             TBpostcode.Text = ""
             TBstreetname.Text = ""
             TBtown.Text = ""
+        End If
+    End Sub
 
+    Private Sub CheckTownName()
+        If TBtown.Text < 2 Or TBtown.Text > 25 Then
+            MsgBox("Please enter a valid town name !")
+            TBtown.Text = ""
+            town = ""
+        End If
+    End Sub
 
+    Private Sub CheckPostCode()
+        If TBpostcode.Text <> 5 Then
+            MsgBox("Please enter a valid Post Code number !")
+            TBpostcode.Text = ""
+            postcode = ""
+        End If
+    End Sub
+
+    Private Sub CheckCreditCard()
+        If Not IsNumeric(TBccnum.Text) Or TBccnum.Text <> 16 Then
+            MsgBox("Please enter a valid Credit Card number !")
         End If
     End Sub
 
