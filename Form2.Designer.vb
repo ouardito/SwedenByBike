@@ -22,12 +22,12 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.TBccnum = New System.Windows.Forms.TextBox()
+        Me.TBfullname = New System.Windows.Forms.TextBox()
+        Me.TBhousenum = New System.Windows.Forms.TextBox()
+        Me.TBstreetname = New System.Windows.Forms.TextBox()
+        Me.TBtown = New System.Windows.Forms.TextBox()
+        Me.TBpostcode = New System.Windows.Forms.TextBox()
         Me.lbltotal = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -39,47 +39,47 @@ Partial Class Form2
         Me.Button2 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'TextBox1
+        'TBccnum
         '
-        Me.TextBox1.Location = New System.Drawing.Point(12, 70)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox1.TabIndex = 0
+        Me.TBccnum.Location = New System.Drawing.Point(12, 70)
+        Me.TBccnum.Name = "TBccnum"
+        Me.TBccnum.Size = New System.Drawing.Size(221, 20)
+        Me.TBccnum.TabIndex = 0
         '
-        'TextBox2
+        'TBfullname
         '
-        Me.TextBox2.Location = New System.Drawing.Point(12, 96)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox2.TabIndex = 1
+        Me.TBfullname.Location = New System.Drawing.Point(12, 96)
+        Me.TBfullname.Name = "TBfullname"
+        Me.TBfullname.Size = New System.Drawing.Size(221, 20)
+        Me.TBfullname.TabIndex = 1
         '
-        'TextBox3
+        'TBhousenum
         '
-        Me.TextBox3.Location = New System.Drawing.Point(12, 122)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox3.TabIndex = 2
+        Me.TBhousenum.Location = New System.Drawing.Point(12, 122)
+        Me.TBhousenum.Name = "TBhousenum"
+        Me.TBhousenum.Size = New System.Drawing.Size(221, 20)
+        Me.TBhousenum.TabIndex = 2
         '
-        'TextBox4
+        'TBstreetname
         '
-        Me.TextBox4.Location = New System.Drawing.Point(12, 148)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox4.TabIndex = 3
+        Me.TBstreetname.Location = New System.Drawing.Point(12, 148)
+        Me.TBstreetname.Name = "TBstreetname"
+        Me.TBstreetname.Size = New System.Drawing.Size(221, 20)
+        Me.TBstreetname.TabIndex = 3
         '
-        'TextBox5
+        'TBtown
         '
-        Me.TextBox5.Location = New System.Drawing.Point(12, 174)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox5.TabIndex = 4
+        Me.TBtown.Location = New System.Drawing.Point(12, 174)
+        Me.TBtown.Name = "TBtown"
+        Me.TBtown.Size = New System.Drawing.Size(221, 20)
+        Me.TBtown.TabIndex = 4
         '
-        'TextBox6
+        'TBpostcode
         '
-        Me.TextBox6.Location = New System.Drawing.Point(12, 200)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(221, 20)
-        Me.TextBox6.TabIndex = 5
+        Me.TBpostcode.Location = New System.Drawing.Point(12, 200)
+        Me.TBpostcode.Name = "TBpostcode"
+        Me.TBpostcode.Size = New System.Drawing.Size(221, 20)
+        Me.TBpostcode.TabIndex = 5
         '
         'lbltotal
         '
@@ -176,12 +176,12 @@ Partial Class Form2
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbltotal)
-        Me.Controls.Add(Me.TextBox6)
-        Me.Controls.Add(Me.TextBox5)
-        Me.Controls.Add(Me.TextBox4)
-        Me.Controls.Add(Me.TextBox3)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TBpostcode)
+        Me.Controls.Add(Me.TBtown)
+        Me.Controls.Add(Me.TBstreetname)
+        Me.Controls.Add(Me.TBhousenum)
+        Me.Controls.Add(Me.TBfullname)
+        Me.Controls.Add(Me.TBccnum)
         Me.Name = "Form2"
         Me.Text = "Form2"
         Me.ResumeLayout(False)
@@ -189,12 +189,12 @@ Partial Class Form2
 
     End Sub
 
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox3 As TextBox
-    Friend WithEvents TextBox4 As TextBox
-    Friend WithEvents TextBox5 As TextBox
-    Friend WithEvents TextBox6 As TextBox
+    Friend WithEvents TBccnum As TextBox
+    Friend WithEvents TBfullname As TextBox
+    Friend WithEvents TBhousenum As TextBox
+    Friend WithEvents TBstreetname As TextBox
+    Friend WithEvents TBtown As TextBox
+    Friend WithEvents TBpostcode As TextBox
     Friend WithEvents lbltotal As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label

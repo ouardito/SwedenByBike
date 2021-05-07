@@ -10,12 +10,15 @@
     Dim fullname As String
     Dim housenum As String
     Dim streetname As String
-    Dim towncity As String
-    Dim zipcode As String
+    Dim town As String
+    Dim postcode As String
 
+    Private Sub CheckIfNull()
+        If 
+    End Sub
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbltotal.Text += "total Cost : " & total & "SEK"
+        lbltotal.Text += "Total Cost : " & total & "SEK"
     End Sub
 
 
