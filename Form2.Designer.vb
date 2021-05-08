@@ -35,8 +35,8 @@ Partial Class Form2
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnStore = New System.Windows.Forms.Button()
+        Me.btnPrint = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TBccnum
@@ -144,31 +144,31 @@ Partial Class Form2
         Me.Label7.TabIndex = 12
         Me.Label7.Text = "Zip Code"
         '
-        'Button1
+        'btnStore
         '
-        Me.Button1.Location = New System.Drawing.Point(288, 382)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 23)
-        Me.Button1.TabIndex = 13
-        Me.Button1.Text = "Store Details"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnStore.Location = New System.Drawing.Point(288, 382)
+        Me.btnStore.Name = "btnStore"
+        Me.btnStore.Size = New System.Drawing.Size(101, 23)
+        Me.btnStore.TabIndex = 13
+        Me.btnStore.Text = "Store Details"
+        Me.btnStore.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnPrint
         '
-        Me.Button2.Location = New System.Drawing.Point(409, 382)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(101, 23)
-        Me.Button2.TabIndex = 14
-        Me.Button2.Text = "Print Receipt"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnPrint.Location = New System.Drawing.Point(409, 382)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(101, 23)
+        Me.btnPrint.TabIndex = 14
+        Me.btnPrint.Text = "Print Receipt"
+        Me.btnPrint.UseVisualStyleBackColor = True
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnPrint)
+        Me.Controls.Add(Me.btnStore)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -202,6 +202,6 @@ Partial Class Form2
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnStore As Button
+    Friend WithEvents btnPrint As Button
 End Class
