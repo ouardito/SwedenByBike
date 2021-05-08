@@ -1,17 +1,20 @@
 ﻿Public Class Form1
+
+    'Declaring arrays
     ReadOnly tourdestinations() As String = {"Gothenburg", "Malmö", "Stockholm"}
     ReadOnly tourmonths() As String = {"June", "July", "August"}
     ReadOnly tourlengths() As String = {"3 Days", "6 Days", "10 Days"}
 
+    'Declaring variables (Used Public declaring to use it in the next form)
     Public destination As String
     Public length As String
     Public Month As String
     Public options As String
-
     Public total As Integer
     Dim optionsprice As Integer
     Dim i, j As Integer
 
+    'Send arrays values to Comboboxes
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         CBtourdestination.MaxDropDownItems = tourdestinations.Length
@@ -28,8 +31,10 @@
         Next
     End Sub
 
+    'Calculating the total price
     Private Sub BtnQuote_Click(sender As Object, e As EventArgs) Handles btnQuote.Click
 
+        'Assigning value to the varibales via comboboxes' selected items
         destination = CBtourdestination.SelectedItem
         length = CBtourlength.SelectedItem
         Month = CBtourmonth.SelectedItem
@@ -39,7 +44,7 @@
         i = 0
         j = 0
 
-
+        'Implementation for total price based on options choosed
         If destination = "Gothenburg" Then
             If Month = "June" Then
                 If length = "3 Days" Then
@@ -121,29 +126,32 @@
             End If
         End If
 
+        'Adding optionals price to total
         If CBbikehire.Checked = True Then
             i = DoCalculations(length, 650)
             optionsprice += i
             options = "Electric Bike Hire"
         End If
-
         If CBmealplan.Checked = True Then
             j = DoCalculations(length, 490)
             optionsprice += j
             options = "Meal Plan Package"
         End If
-
         If CBbikehire.Checked = True And CBmealplan.Checked = True Then
             options = "Electric Bike Hire and Meal plan package"
         End If
 
+        'Final total cost
         total += optionsprice
 
+        'Showing The total to the user
         lblquotedprice.Text = total & " SEK"
 
+        'Enabling the Order button
         btnOrder.Enabled = True
     End Sub
 
+    'Function to calculate options per days that had been choosen
     Private Function DoCalculations(days As String, price As Integer)
         Dim x As Integer
 
@@ -155,10 +163,10 @@
             x = price * 10
         End If
         Return x
-
     End Function
 
     Private Sub BtnOrder_Click(sender As Object, e As EventArgs) Handles btnOrder.Click
+        'Show the order window and Hide the current window
         Form2.Show()
         Me.Hide()
     End Sub

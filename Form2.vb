@@ -1,13 +1,16 @@
-﻿Imports System.IO
+﻿'Import system io for writing the final receipt
+Imports System.IO
 
 Public Class Form2
 
+    'Declaring local varibales and assign their values from the Form1
     ReadOnly total As Integer = Form1.total
     ReadOnly destination As String = Form1.destination
     ReadOnly length As String = Form1.length
     ReadOnly Month As String = Form1.Month
     ReadOnly options As String = Form1.options
 
+    'Declaring order's values
     Dim ccnum As String
     Dim fullname As String
     Dim housenum As String
@@ -15,10 +18,12 @@ Public Class Form2
     Dim town As String
     Dim postcode As String
 
+    'Showing the price to the user
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbltotal.Text += "Total Cost : " & total & "SEK"
     End Sub
 
+    'Functions for different errors
     Private Function CheckIfNull() As Boolean
         If TBccnum.Text = "" Or TBfullname.Text = "" Or TBhousenum.Text = "" Or TBstreetname.Text = "" Or TBtown.Text = "" And TBpostcode.Text = "" Then
             Return True
@@ -53,6 +58,7 @@ Public Class Form2
             Return True
         End If
     End Function
+    'Handling errors
     Private Sub ErrorHandle()
         If CheckCreditCard() = False Or CheckPostCode() = False Or CheckIfNull() = True Or CheckTownName() = False Then
             TBccnum.Text = ""
@@ -69,6 +75,7 @@ Public Class Form2
 
     End Sub
 
+    'Function to store order details
     Private Function Storedetails() As String
         ccnum = TBccnum.Text
         fullname = TBfullname.Text
@@ -79,7 +86,7 @@ Public Class Form2
 
         Return ccnum & fullname & housenum & streetname & town & postcode
     End Function
-
+    'Function to write the final receipt
     Private Sub Writedetails(text As String)
         Dim MyWriter As StreamWriter
         Dim dialog As SaveFileDialog
@@ -87,8 +94,8 @@ Public Class Form2
         Dim filename As String
 
         dialog = New SaveFileDialog With {
-            .FileName = "BikeReceipt.txt",
-            .Filter = "txt files (*.txt)|*.txt",
+            .FileName = "BikeReceipt.txt", 'Force the Dialog to choose the provided filename
+            .Filter = "txt files (*.txt)|*.txt", 'Force the system to choose only .txt as the type of file
             .FilterIndex = 1,
             .RestoreDirectory = True
         }
@@ -110,13 +117,11 @@ Public Class Form2
         ErrorHandle()
     End Sub
     Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        'Declaring the receipt text 
         Dim receipt As String
         receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Options : " & options & vbCrLf & "Total Cost : " & total
 
-
         Writedetails(receipt)
-
-
     End Sub
 
 End Class
