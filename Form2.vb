@@ -20,13 +20,12 @@ Public Class Form2
     End Sub
 
     Private Function CheckIfNull() As Boolean
-        If TBccnum.Text Is Nothing Or TBfullname.Text Is Nothing Or TBhousenum.Text Is Nothing Or TBstreetname.Text Is Nothing Or TBtown.Text Is Nothing And TBpostcode.Text Is Nothing Then
+        If TBccnum.Text = "" Or TBfullname.Text = "" Or TBhousenum.Text = "" Or TBstreetname.Text = "" Or TBtown.Text = "" And TBpostcode.Text = "" Then
             Return True
         Else
             Return False
         End If
     End Function
-
     Private Function CheckTownName() As Boolean
         If TBtown.TextLength < 2 Or TBtown.TextLength > 25 Then
             Return False
@@ -34,34 +33,39 @@ Public Class Form2
             Return True
         End If
     End Function
-
     Private Function CheckPostCode() As Boolean
         If Not IsNumeric(TBpostcode.Text) Then
             Return False
-        ElseIf IsNumeric(TBpostcode.Text) Then
-            If TBpostcode.Text <> 5 Then
-                Return False
-            Else
-                Return True
-            End If
+        ElseIf IsNumeric(TBpostcode.Text) And TBpostcode.Text <> 5 Then
+            Return False
         Else
             Return True
         End If
     End Function
-
     Private Function CheckCreditCard() As Boolean
         If Not IsNumeric(TBccnum.Text) Then
             Return False
-        ElseIf IsNumeric(TBccnum.Text) Then
-            If TBccnum.Text <> 16 Then
-                Return False
-            Else
-                Return True
-            End If
+        ElseIf IsNumeric(TBccnum.Text) And TBccnum.TextLength <> 16 Then
+            Return False
         Else
             Return True
         End If
     End Function
+    Private Sub ErrorHandle()
+        If CheckIfNull() = True Or CheckCreditCard() = False Or CheckPostCode() = False Or CheckTownName() = False Then
+            TBccnum.Text = ""
+            TBfullname.Text = ""
+            TBhousenum.Text = ""
+            TBstreetname.Text = ""
+            TBtown.Text = ""
+            TBpostcode.Text = ""
+
+            MsgBox("Please Check your details again !")
+        Else
+            Storedetails()
+        End If
+
+    End Sub
 
     Private Function Storedetails() As String
         ccnum = TBccnum.Text
@@ -73,28 +77,6 @@ Public Class Form2
 
         Return ccnum & fullname & housenum & streetname & town & postcode
     End Function
-
-
-    Private Sub ErrorHandle()
-        If CheckIfNull() = True Or CheckTownName() = False Or CheckPostCode() = False Or CheckCreditCard() = False Then
-            TBccnum.Text = ""
-            TBfullname.Text = ""
-            TBhousenum.Text = ""
-            TBstreetname.Text = ""
-            TBtown.Text = ""
-            TBpostcode.Text = ""
-
-            MsgBox("Please Check your details again !")
-        ElseIf CheckIfNull() = False And CheckTownName() = True And CheckPostCode() = True And CheckCreditCard() = True Then
-            Storedetails()
-        End If
-
-        Storedetails()
-
-
-    End Sub
-
-
     Private Sub WriteDetails()
         Dim Mywriter As StreamWriter
         Dim dialog As SaveFileDialog
@@ -120,7 +102,6 @@ Public Class Form2
     Private Sub btnStore_Click(sender As Object, e As EventArgs) Handles btnStore.Click
         ErrorHandle()
     End Sub
-
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         WriteDetails()
     End Sub
