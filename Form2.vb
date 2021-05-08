@@ -80,34 +80,43 @@ Public Class Form2
         Return ccnum & fullname & housenum & streetname & town & postcode
     End Function
 
-    Private Function WriteToFile(filename As String, text As String)
-        Dim Mywriter As StreamWriter
-
-        Mywriter = File.CreateText(filename)
-        Mywriter.WriteLine(text)
-        Mywriter.Close()
-
-    End Function
-
-    Private Sub BtnStore_Click(sender As Object, e As EventArgs) Handles btnStore.Click
-        ErrorHandle()
-    End Sub
-    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub Writedetails(text As String)
+        Dim MyWriter As StreamWriter
         Dim dialog As SaveFileDialog
         Dim selected As Boolean
         Dim filename As String
-        Dim receipt As String
 
-        dialog = New SaveFileDialog()
+        dialog = New SaveFileDialog With {
+            .FileName = "BikeReceipt.txt",
+            .Filter = "txt files (*.txt)|*.txt",
+            .FilterIndex = 1,
+            .RestoreDirectory = True
+        }
+
         selected = dialog.ShowDialog
 
         If selected = True Then
             filename = dialog.FileName
 
-            receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Options : " & options & vbCrLf & "Total Cost : " & total
+            MyWriter = File.CreateText(filename)
+            MyWriter.WriteLine(text)
+            MyWriter.Close()
 
-            WriteToFile("Bikereceipt.txt", "BikeReceipt.txt")
-            WriteToFile(filename, receipt)
         End If
+
     End Sub
+
+    Private Sub BtnStore_Click(sender As Object, e As EventArgs) Handles btnStore.Click
+        ErrorHandle()
+    End Sub
+    Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+        Dim receipt As String
+        receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Options : " & options & vbCrLf & "Total Cost : " & total
+
+
+        Writedetails(receipt)
+
+
+    End Sub
+
 End Class
