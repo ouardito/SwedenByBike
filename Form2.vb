@@ -53,7 +53,7 @@ Public Class Form2
         If Not IsNumeric(TBccnum.Text) Then
             Return False
         ElseIf IsNumeric(TBccnum.Text) Then
-            If TBpostcode.Text <> 16 Then
+            If TBccnum.Text <> 16 Then
                 Return False
             Else
                 Return True
@@ -71,7 +71,7 @@ Public Class Form2
         town = TBtown.Text
         postcode = TBpostcode.Text
 
-        Return ccnum And fullname And housenum And streetname And town And postcode
+        Return ccnum & fullname & housenum & streetname & town & postcode
     End Function
 
 
@@ -85,9 +85,13 @@ Public Class Form2
             TBpostcode.Text = ""
 
             MsgBox("Please Check your details again !")
-        Else
+        ElseIf CheckIfNull() = False And CheckTownName() = True And CheckPostCode() = True And CheckCreditCard() = True Then
             Storedetails()
         End If
+
+        Storedetails()
+
+
     End Sub
 
 
@@ -98,7 +102,7 @@ Public Class Form2
         Dim receipt As String
         Dim filename As String
 
-        receipt = "Your order details : " & vbCrLf & "Full Name : " And fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Total Cost : " & total
+        receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Total Cost : " & total
 
         dialog = New SaveFileDialog()
         selected = dialog.ShowDialog
