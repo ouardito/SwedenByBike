@@ -68,7 +68,7 @@ Public Class Form2
             TBtown.Text = ""
             TBpostcode.Text = ""
 
-            MsgBox("Please Check your details again !")
+            MessageBox.Show("Please Check your details again !", "Error !")
         Else
             Storedetails()
         End If
