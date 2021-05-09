@@ -43,6 +43,7 @@ Partial Class Form1
         '
         'CBtourmonth
         '
+        Me.CBtourmonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBtourmonth.FormattingEnabled = True
         Me.CBtourmonth.Location = New System.Drawing.Point(181, 143)
         Me.CBtourmonth.Name = "CBtourmonth"
@@ -51,6 +52,7 @@ Partial Class Form1
         '
         'CBtourlength
         '
+        Me.CBtourlength.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBtourlength.FormattingEnabled = True
         Me.CBtourlength.Location = New System.Drawing.Point(345, 143)
         Me.CBtourlength.Name = "CBtourlength"
@@ -157,6 +159,7 @@ Partial Class Form1
         '
         'CBtourdestination
         '
+        Me.CBtourdestination.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBtourdestination.FormattingEnabled = True
         Me.CBtourdestination.Location = New System.Drawing.Point(16, 143)
         Me.CBtourdestination.Name = "CBtourdestination"

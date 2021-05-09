@@ -154,11 +154,18 @@
         'Final total cost
         total += optionsprice
 
-        'Showing The total to the user
-        lblquotedprice.Text = total & " SEK"
+        'Check errors and Enabling the Order button
+        HandleBlankError()
+    End Sub
 
-        'Enabling the Order button
-        btnOrder.Enabled = True
+    'Check if any of the tour/length/month is blank
+    Private Sub HandleBlankError()
+        If CBtourdestination.SelectedItem Is Nothing Or CBtourmonth.SelectedItem Is Nothing Or CBtourlength.SelectedItem Is Nothing Then
+            MessageBox.Show("Please fill all your options.", "Error !")
+        Else
+            btnOrder.Enabled = True
+            lblquotedprice.Text = total & " SEK"
+        End If
     End Sub
 
     'Function to calculate options per days that had been choosen
