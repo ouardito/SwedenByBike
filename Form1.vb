@@ -10,6 +10,7 @@
     Public length As String
     Public Month As String
     Public options As String
+    Public basicpackage As String
     Public total As Integer
     Dim optionsprice As Integer
     Dim i, j As Integer
@@ -139,6 +140,15 @@
         End If
         If CBbikehire.Checked = True And CBmealplan.Checked = True Then
             options = "Electric Bike Hire and Meal plan package"
+        Else
+            options = "None"
+        End If
+
+        'Adding basic package to its variable
+        If CBbasicpackage.Checked = True Then
+            basicpackage = "Yes"
+        Else
+            basicpackage = "No"
         End If
 
         'Final total cost

@@ -36,6 +36,9 @@ Partial Class Form1
         Me.lblquotedprice = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.CBtourdestination = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.CBbasicpackage = New System.Windows.Forms.CheckBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CBtourmonth
@@ -135,12 +138,12 @@ Partial Class Form1
         '
         'lblquotedprice
         '
-        Me.lblquotedprice.Font = New System.Drawing.Font("Microsoft YaHei", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblquotedprice.Location = New System.Drawing.Point(178, 206)
+        Me.lblquotedprice.Font = New System.Drawing.Font("Microsoft YaHei", 18.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblquotedprice.Location = New System.Drawing.Point(156, 340)
         Me.lblquotedprice.Name = "lblquotedprice"
-        Me.lblquotedprice.Size = New System.Drawing.Size(288, 156)
+        Me.lblquotedprice.Size = New System.Drawing.Size(163, 41)
         Me.lblquotedprice.TabIndex = 11
-        Me.lblquotedprice.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.lblquotedprice.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label5
         '
@@ -160,11 +163,43 @@ Partial Class Form1
         Me.CBtourdestination.Size = New System.Drawing.Size(121, 21)
         Me.CBtourdestination.TabIndex = 13
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(178, 206)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(92, 13)
+        Me.Label6.TabIndex = 14
+        Me.Label6.Text = "Basic Package"
+        '
+        'CBbasicpackage
+        '
+        Me.CBbasicpackage.AutoSize = True
+        Me.CBbasicpackage.Location = New System.Drawing.Point(181, 256)
+        Me.CBbasicpackage.Name = "CBbasicpackage"
+        Me.CBbasicpackage.Size = New System.Drawing.Size(79, 17)
+        Me.CBbasicpackage.TabIndex = 15
+        Me.CBbasicpackage.Text = "Yes Please"
+        Me.CBbasicpackage.UseVisualStyleBackColor = True
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(181, 233)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(224, 13)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = " - Includes hotel room and hire of a basic bike." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(485, 450)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.CBbasicpackage)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.CBtourdestination)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblquotedprice)
@@ -198,4 +233,7 @@ Partial Class Form1
     Friend WithEvents lblquotedprice As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents CBtourdestination As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents CBbasicpackage As CheckBox
+    Friend WithEvents Label7 As Label
 End Class

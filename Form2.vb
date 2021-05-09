@@ -9,6 +9,7 @@ Public Class Form2
     ReadOnly length As String = Form1.length
     ReadOnly Month As String = Form1.Month
     ReadOnly options As String = Form1.options
+    ReadOnly basicpackage As String = Form1.basicpackage
 
     'Declaring order's values
     Dim ccnum As String
@@ -119,7 +120,7 @@ Public Class Form2
     Private Sub BtnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
         'Declaring the receipt text 
         Dim receipt As String
-        receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Options : " & options & vbCrLf & "Total Cost : " & total
+        receipt = "Your order details : " & vbCrLf & "Full Name : " & fullname & vbCrLf & "Destination : " & destination & vbCrLf & "Tour month : " & Month & vbCrLf & "Tour length : " & length & vbCrLf & "Options : " & options & vbCrLf & "Basic package : " & basicpackage & vbCrLf & vbCrLf & "Total Cost : " & total & vbCrLf & vbCrLf & "Thank you for choosing our services. See you soon!"
 
         Writedetails(receipt)
     End Sub

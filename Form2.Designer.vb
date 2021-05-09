@@ -88,9 +88,8 @@ Partial Class Form2
         Me.lbltotal.AutoSize = True
         Me.lbltotal.Location = New System.Drawing.Point(132, 77)
         Me.lbltotal.Name = "lbltotal"
-        Me.lbltotal.Size = New System.Drawing.Size(61, 13)
+        Me.lbltotal.Size = New System.Drawing.Size(0, 13)
         Me.lbltotal.TabIndex = 6
-        Me.lbltotal.Text = "Total is : "
         '
         'Label2
         '
